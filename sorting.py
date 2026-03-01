@@ -1,5 +1,3 @@
-import math
-
 def insertion(l: list[int]):
     """
     Implementation of the insertion sort algorithm.
