@@ -1,3 +1,5 @@
+import math
+
 def insertion(l: list[int]):
     """
     Implementation of the insertion sort algorithm.
@@ -46,3 +48,31 @@ def bubble(l: list[int]):
             break   
     
     return l
+
+def selection(l: list[int]):
+    """
+    Implementation of the selection sort algorithm.
+
+    Recieves:
+        l[int]: int = list of integers to be sorted.
+
+    Returns: 
+        l: list[int] = the same list that it recieved sorted.
+    """
+    
+    for i in range(len(l)-1, 0, -1):
+        max_index: int = i
+        
+        for j in range(i+1):
+            if l[j] > l[max_index]:
+                max_index = j
+
+        l[max_index], l[i] = l[i], l[max_index]
+
+    return l 
+
+def merge(l: list[int]):
+    pass
+
+def heap(l: list[int]):
+    pass
