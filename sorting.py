@@ -70,7 +70,32 @@ def selection(l: list[int]):
     return l 
 
 def merge(l: list[int]):
-    pass
+    if len(l) <= 1:
+        return l
+    
+    mid: int = len(l) // 2
+    left: list[int]= merge(l[:mid])
+    right: list[int] = merge(l[mid:])
+
+    return merge_sort(left, right)
+
+def merge_sort(left: list[int], right: list[int]):
+    
+    l: list[int] = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            l.append(left[i])
+            i += 1
+        else:
+            l.append(right[j])
+            j += 1
+    
+    l.extend(left[i:])
+    l.extend(right[j:])
+
+    return l
 
 def heap(l: list[int]):
     pass
