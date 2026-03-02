@@ -70,6 +70,15 @@ def selection(l: list[int]):
     return l 
 
 def merge(l: list[int]):
+    """
+    Sorting algorithm that merges list in a recursive way.
+
+    Recieves:
+        l[int]: int = list of integers to be sorted.
+
+    Returns: 
+        A calling to the function that recombines the list.
+    """
     if len(l) <= 1:
         return l
     
@@ -80,6 +89,16 @@ def merge(l: list[int]):
     return merge_sort(left, right)
 
 def merge_sort(left: list[int], right: list[int]):
+    """
+    Function that recombines the list.
+
+    Recieves:
+        left: list[int] = Left list to recombine
+        right: list[int] = Right list to recombine
+
+    Returns: 
+        l: list[int] = sorted list.
+    """
     
     l: list[int] = []
     i = j = 0
